@@ -1,0 +1,258 @@
+{
+	"id": "b923c11f-3e0d-4c37-a6e2-fc292edc56d4",
+	"name": "Current wether api",
+	"timestamp": "2022-03-02T10:53:40.120Z",
+	"collection_id": "19814973-bf5f8f54-2cab-4e53-890c-8330620ab10d",
+	"folder_id": 0,
+	"environment_id": "19814973-f06f1d22-62bd-484b-824f-2eabdc8c9ec2",
+	"totalPass": 14,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "30d4065f-5ef4-4f54-b583-1970745cce96",
+			"name": "current weather data for a specific location based on lat and long",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=10.019000&lon=76.352669&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 986,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Api request success": true,
+				"Response time is less than 3000ms": true,
+				"check wether timezone is Kolkata": true
+			},
+			"testPassFailCounts": {
+				"Api request success": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check wether timezone is Kolkata": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				986
+			],
+			"allTests": [
+				{
+					"Api request success": true,
+					"Response time is less than 3000ms": true,
+					"check wether timezone is Kolkata": true
+				}
+			]
+		},
+		{
+			"id": "db94b1eb-64b4-4c86-9d76-bdcea97e2b79",
+			"name": "current weather data for a specific location based on invalid lat and long",
+			"url": "https://api.weatherbit.io/v2.0/current?lat={{invalid_CURRENT_LAN}}&lon={{invalid_CURRENT_lON}}&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 270,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response time is less than 3000ms": true,
+				"checking error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				270
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response time is less than 3000ms": true,
+					"checking error message": true
+				}
+			]
+		},
+		{
+			"id": "6bb3abbe-c94f-44ec-90cc-b0fbd1ee4535",
+			"name": "current weather data for a specific location based on lat and long with invalid API key",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=10.019000&lon=76.352669&key={{API_KEYS}}",
+			"time": 264,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Api request forbidden": true,
+				"Response time is less than 3000ms": true,
+				"Checking error message": true
+			},
+			"testPassFailCounts": {
+				"Api request forbidden": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				264
+			],
+			"allTests": [
+				{
+					"Api request forbidden": true,
+					"Response time is less than 3000ms": true,
+					"Checking error message": true
+				}
+			]
+		},
+		{
+			"id": "ebd4660c-380d-48ad-93dc-f33e71c0c90a",
+			"name": "current weather data for multiple cities in the world",
+			"url": "https://api.weatherbit.io/v2.0/current?cities=kochi&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 262,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": false,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				262
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": false,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "f4ae7511-783a-4c32-b067-54971039e4d1",
+			"name": "current air quality data for a particular postcode",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code=682030&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "4099bad5-4e53-4b2e-9642-89eb6433b43d",
+			"name": "current air quality data for a invalid postcode",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code={{postal_codesSS}}&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 263,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"API REQUEST NO CONTENT ": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST NO CONTENT ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				263
+			],
+			"allTests": [
+				{
+					"API REQUEST NO CONTENT ": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2317,
+	"collection": {
+		"requests": [
+			{
+				"id": "30d4065f-5ef4-4f54-b583-1970745cce96",
+				"method": "GET"
+			},
+			{
+				"id": "db94b1eb-64b4-4c86-9d76-bdcea97e2b79",
+				"method": "GET"
+			},
+			{
+				"id": "6bb3abbe-c94f-44ec-90cc-b0fbd1ee4535",
+				"method": "GET"
+			},
+			{
+				"id": "ebd4660c-380d-48ad-93dc-f33e71c0c90a",
+				"method": "GET"
+			},
+			{
+				"id": "f4ae7511-783a-4c32-b067-54971039e4d1",
+				"method": "GET"
+			},
+			{
+				"id": "4099bad5-4e53-4b2e-9642-89eb6433b43d",
+				"method": "GET"
+			}
+		]
+	}
+}
