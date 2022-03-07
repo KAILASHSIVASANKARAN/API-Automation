@@ -1,0 +1,775 @@
+{
+	"id": "458eb8a2-489f-473d-9ada-d1fefb0f5162",
+	"name": "Current weather api",
+	"timestamp": "2022-03-07T15:41:10.119Z",
+	"collection_id": "19814973-51d199de-7a23-497c-b71a-b96c556ea9d6",
+	"folder_id": 0,
+	"environment_id": "19814973-6087da18-c167-4bfa-92de-48056ded4d3a",
+	"totalPass": 47,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "baff5ee6-ff46-4c77-be91-37423b9578e0",
+			"name": "AC1 current weather data for a specific location based on valid lat and long values",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=10.019000&lon=76.352669&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 1138,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Api request success": true,
+				"Response time is less than 3000ms": true,
+				"check wether timezone is Kolkata": true
+			},
+			"testPassFailCounts": {
+				"Api request success": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check wether timezone is Kolkata": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1138
+			],
+			"allTests": [
+				{
+					"Api request success": true,
+					"Response time is less than 3000ms": true,
+					"check wether timezone is Kolkata": true
+				}
+			]
+		},
+		{
+			"id": "b5e990e5-2a2a-4d39-b692-2542afc0dd9e",
+			"name": "AC1 current weather data for a specific location based on valid lat and long values with HTTP in domain URL",
+			"url": "http://api.weatherbit.io/v2.0/current?lat=10.019000&lon=76.352669&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 540,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Api request success": true,
+				"Response time is less than 3000ms": true,
+				"check wether timezone is Kolkata": true
+			},
+			"testPassFailCounts": {
+				"Api request success": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"check wether timezone is Kolkata": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				540
+			],
+			"allTests": [
+				{
+					"Api request success": true,
+					"Response time is less than 3000ms": true,
+					"check wether timezone is Kolkata": true
+				}
+			]
+		},
+		{
+			"id": "94f0ca87-e68d-435d-a232-1499f2f48f4d",
+			"name": "AC1 current weather data for a specific location based on invalid lat and  valid long values",
+			"url": "https://api.weatherbit.io/v2.0/current?lat={{invalid_CURRENT_LAN}}&lon=76.352669&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 365,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response time is less than 3000ms": true,
+				"checking error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				365
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response time is less than 3000ms": true,
+					"checking error message": true
+				}
+			]
+		},
+		{
+			"id": "989f83a3-1476-4025-9933-35f90c348c76",
+			"name": "AC1 current weather data for a specific location based on valid lat and  invalid long values",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=10.019000&lon={{invalid_CURRENT_lON}}&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 1156,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response time is less than 3000ms": true,
+				"checking error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1156
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response time is less than 3000ms": true,
+					"checking error message": true
+				}
+			]
+		},
+		{
+			"id": "7467a95d-9c80-4857-a628-bcb7782fb0f4",
+			"name": "AC1 current weather data for a specific location based on invalid lat and  long values",
+			"url": "https://api.weatherbit.io/v2.0/current?lat={{invalid_CURRENT_LAN}}&lon={{invalid_CURRENT_lON}}&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 272,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response time is less than 3000ms": true,
+				"checking error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				272
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response time is less than 3000ms": true,
+					"checking error message": true
+				}
+			]
+		},
+		{
+			"id": "d16ee7b7-7a22-4b83-9124-75df2cc9f7de",
+			"name": "AC1 current weather data for a specific location based on empty lat and  long values",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=&lon=&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 289,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true,
+				"Response time is less than 3000ms": true,
+				"checking error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				289
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response time is less than 3000ms": true,
+					"checking error message": true
+				}
+			]
+		},
+		{
+			"id": "f7e6ae75-4f57-4f0f-91f1-a36757660c42",
+			"name": "AC1 current weather data for a specific location based on lat and long with invalid API key",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=10.019000&lon=76.352669&key={{API_KEYS}}",
+			"time": 288,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Api request forbidden": true,
+				"Response time is less than 3000ms": true,
+				"Checking error message": true
+			},
+			"testPassFailCounts": {
+				"Api request forbidden": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				288
+			],
+			"allTests": [
+				{
+					"Api request forbidden": true,
+					"Response time is less than 3000ms": true,
+					"Checking error message": true
+				}
+			]
+		},
+		{
+			"id": "32eb544a-adf2-46ff-9759-e7e604e67a10",
+			"name": "AC1 current weather data for a specific location based on lat and long with empty API key",
+			"url": "https://api.weatherbit.io/v2.0/current?lat=10.019000&lon=76.352669&key=",
+			"time": 291,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true,
+				"Checking error message": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				291
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true,
+					"Checking error message": true
+				}
+			]
+		},
+		{
+			"id": "2f3c0b16-3377-461e-b6ef-eccf7f0bdbb7",
+			"name": "AC2 current weather data for multiple cities in the world",
+			"url": "https://api.openweathermap.org/data/2.5/weather?city=Mumbai&Key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 300,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				300
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "1298a61e-14b3-4c0e-92d1-6ab252291e60",
+			"name": "AC2 current weather data for multiple cities in the world with invalid cities",
+			"url": "https://api.openweathermap.org/data/2.5/weather?city=zzzzz&Key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 66,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				66
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "e612b433-b090-4067-971b-1e8acdfb2a8c",
+			"name": "AC2 current weather data for multiple cities in the world with empty city name",
+			"url": "https://api.openweathermap.org/data/2.5/weather?city=&Key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 62,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				62
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "6a2983f0-8003-41c0-bf59-44a7a145fcfa",
+			"name": "AC2 current weather data for multiple cities in the world with invalid APIKEY",
+			"url": "https://api.openweathermap.org/data/2.5/weather?city=Mumbai&Key={{API_KEYss}}",
+			"time": 59,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				59
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "3c98dd74-3ce0-428d-9b75-4386445b7931",
+			"name": "AC2 current weather data for multiple cities in the world with empty APIKEY",
+			"url": "https://api.openweathermap.org/data/2.5/weather?city=Mumbai&Key=",
+			"time": 58,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				58
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "970c5afc-5617-4374-87f9-5dcb69605c2a",
+			"name": "AC3 current air quality data for a particular postcode",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code=682030&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 322,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				322
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "ade80ac6-0931-43de-8997-38e9280eca82",
+			"name": "AC3 current air quality data for a particular postcode with HTTP in domain URL",
+			"url": "http://api.weatherbit.io/v2.0//current/airquality?postal_code=682030&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 276,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				276
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "19699816-9c54-434e-8026-1b2ba5e5d63b",
+			"name": "AC3 current air quality data for a invalid postcode",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code={{invalid_postal_codes}}&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 390,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"API REQUEST NO CONTENT ": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST NO CONTENT ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				390
+			],
+			"allTests": [
+				{
+					"API REQUEST NO CONTENT ": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "029c088c-6897-433a-b08d-cd23270abc28",
+			"name": "AC3 current air quality data for a Empty postcode",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code=&key=58445a02728b419f9b4aa5f2a2255bc2",
+			"time": 305,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"API REQUEST NO CONTENT ": true,
+				"Response time is less than 3000ms": true,
+				"checking error message": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST NO CONTENT ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"checking error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				305
+			],
+			"allTests": [
+				{
+					"API REQUEST NO CONTENT ": true,
+					"Response time is less than 3000ms": true,
+					"checking error message": true
+				}
+			]
+		},
+		{
+			"id": "14c3f193-532b-4a70-aa43-d03557cac407",
+			"name": "AC3 current air quality data for a invalid Api key",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code=682030&key={{invalid_API_KEY}}",
+			"time": 303,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				303
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		},
+		{
+			"id": "f1de4f55-8452-45bb-b443-b1c2f1358460",
+			"name": "AC3 current air quality data for a Empty Api key",
+			"url": "https://api.weatherbit.io/v2.0//current/airquality?postal_code=682030&key=",
+			"time": 307,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"API REQUEST SUCCESS": true,
+				"Response time is less than 3000ms": true
+			},
+			"testPassFailCounts": {
+				"API REQUEST SUCCESS": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				307
+			],
+			"allTests": [
+				{
+					"API REQUEST SUCCESS": true,
+					"Response time is less than 3000ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 6787,
+	"collection": {
+		"requests": [
+			{
+				"id": "baff5ee6-ff46-4c77-be91-37423b9578e0",
+				"method": "GET"
+			},
+			{
+				"id": "b5e990e5-2a2a-4d39-b692-2542afc0dd9e",
+				"method": "GET"
+			},
+			{
+				"id": "94f0ca87-e68d-435d-a232-1499f2f48f4d",
+				"method": "GET"
+			},
+			{
+				"id": "989f83a3-1476-4025-9933-35f90c348c76",
+				"method": "GET"
+			},
+			{
+				"id": "7467a95d-9c80-4857-a628-bcb7782fb0f4",
+				"method": "GET"
+			},
+			{
+				"id": "d16ee7b7-7a22-4b83-9124-75df2cc9f7de",
+				"method": "GET"
+			},
+			{
+				"id": "f7e6ae75-4f57-4f0f-91f1-a36757660c42",
+				"method": "GET"
+			},
+			{
+				"id": "32eb544a-adf2-46ff-9759-e7e604e67a10",
+				"method": "GET"
+			},
+			{
+				"id": "2f3c0b16-3377-461e-b6ef-eccf7f0bdbb7",
+				"method": "GET"
+			},
+			{
+				"id": "1298a61e-14b3-4c0e-92d1-6ab252291e60",
+				"method": "GET"
+			},
+			{
+				"id": "e612b433-b090-4067-971b-1e8acdfb2a8c",
+				"method": "GET"
+			},
+			{
+				"id": "6a2983f0-8003-41c0-bf59-44a7a145fcfa",
+				"method": "GET"
+			},
+			{
+				"id": "3c98dd74-3ce0-428d-9b75-4386445b7931",
+				"method": "GET"
+			},
+			{
+				"id": "970c5afc-5617-4374-87f9-5dcb69605c2a",
+				"method": "GET"
+			},
+			{
+				"id": "ade80ac6-0931-43de-8997-38e9280eca82",
+				"method": "GET"
+			},
+			{
+				"id": "19699816-9c54-434e-8026-1b2ba5e5d63b",
+				"method": "GET"
+			},
+			{
+				"id": "029c088c-6897-433a-b08d-cd23270abc28",
+				"method": "GET"
+			},
+			{
+				"id": "14c3f193-532b-4a70-aa43-d03557cac407",
+				"method": "GET"
+			},
+			{
+				"id": "f1de4f55-8452-45bb-b443-b1c2f1358460",
+				"method": "GET"
+			}
+		]
+	}
+}

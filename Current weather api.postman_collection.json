@@ -1,0 +1,1045 @@
+{
+	"info": {
+		"_postman_id": "51d199de-7a23-497c-b71a-b96c556ea9d6",
+		"name": "Current weather api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AC1 current weather data for a specific location based on valid lat and long values",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 200\r",
+							"pm.test(\"Api request success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"check wether timezone is Kolkata\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Asia\\\\/Kolkata\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat={{CURRENT_LAN}}&lon={{CURRENT_lON}}&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on valid lat and long values with HTTP in domain URL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 200\r",
+							"pm.test(\"Api request success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"check wether timezone is Kolkata\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Asia\\\\/Kolkata\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.weatherbit.io/v2.0/current?lat={{CURRENT_LAN}}&lon={{CURRENT_lON}}&key={{API_KEY}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on invalid lat and  valid long values",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 400\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid lat/lon supplied\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat={{invalid_CURRENT_LAN}}&lon={{CURRENT_lON}}&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{invalid_CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on valid lat and  invalid long values",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 400\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid lat/lon supplied\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat={{CURRENT_LAN}}&lon={{invalid_CURRENT_lON}}&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{invalid_CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on invalid lat and  long values",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 400\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid lat/lon supplied\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat={{invalid_CURRENT_LAN}}&lon={{invalid_CURRENT_lON}}&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{invalid_CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{invalid_CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on empty lat and  long values",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 400\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid Parameters supplied.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat=&lon=&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": ""
+						},
+						{
+							"key": "lon",
+							"value": ""
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on lat and long with invalid API key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 403\r",
+							"pm.test(\"Api request forbidden\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"Checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"API key not valid, or not yet activated\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat={{CURRENT_LAN}}&lon={{CURRENT_lON}}&key={{API_KEYS}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEYS}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC1 current weather data for a specific location based on lat and long with empty API key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 403\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"Checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"API key not valid, or not yet activated\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0/current?lat={{CURRENT_LAN}}&lon={{CURRENT_lON}}&key=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"current"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{CURRENT_LAN}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{CURRENT_lON}}"
+						},
+						{
+							"key": "key",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC2 current weather data for multiple cities in the world",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 401\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?city={{City}}&Key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "{{City}}"
+						},
+						{
+							"key": "Key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC2 current weather data for multiple cities in the world with invalid cities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 401\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?city=zzzzz&Key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "zzzzz"
+						},
+						{
+							"key": "Key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC2 current weather data for multiple cities in the world with empty city name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 401\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?city=&Key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": ""
+						},
+						{
+							"key": "Key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC2 current weather data for multiple cities in the world with invalid APIKEY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 401\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?city={{City}}&Key={{API_KEYss}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "{{City}}"
+						},
+						{
+							"key": "Key",
+							"value": "{{API_KEYss}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC2 current weather data for multiple cities in the world with empty APIKEY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 401\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?city={{City}}&Key=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "{{City}}"
+						},
+						{
+							"key": "Key",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC3 current air quality data for a particular postcode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 200\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0//current/airquality?postal_code={{postal_code}}&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"",
+						"current",
+						"airquality"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "{{postal_code}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC3 current air quality data for a particular postcode with HTTP in domain URL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 200\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.weatherbit.io/v2.0//current/airquality?postal_code={{postal_code}}&key={{API_KEY}}",
+					"protocol": "http",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"",
+						"current",
+						"airquality"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "{{postal_code}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC3 current air quality data for a invalid postcode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 204\r",
+							"pm.test(\"API REQUEST NO CONTENT \", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0//current/airquality?postal_code={{invalid_postal_codes}}&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"",
+						"current",
+						"airquality"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "{{invalid_postal_codes}}"
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC3 current air quality data for a Empty postcode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 400\r",
+							"pm.test(\"API REQUEST NO CONTENT \", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"//check if response body as per expected\r",
+							"pm.test(\"checking error message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Invalid Parameters supplied.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0//current/airquality?postal_code=&key={{API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"",
+						"current",
+						"airquality"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": ""
+						},
+						{
+							"key": "key",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC3 current air quality data for a invalid Api key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 403\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0//current/airquality?postal_code={{postal_code}}&key={{invalid_API_KEY}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"",
+						"current",
+						"airquality"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "{{postal_code}}"
+						},
+						{
+							"key": "key",
+							"value": "{{invalid_API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AC3 current air quality data for a Empty Api key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test if the API status is 403\r",
+							"pm.test(\"API REQUEST SUCCESS\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"//Check if Response time is less than 3000ms\r",
+							"pm.test(\"Response time is less than 3000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.weatherbit.io/v2.0//current/airquality?postal_code={{postal_code}}&key=",
+					"protocol": "https",
+					"host": [
+						"api",
+						"weatherbit",
+						"io"
+					],
+					"path": [
+						"v2.0",
+						"",
+						"current",
+						"airquality"
+					],
+					"query": [
+						{
+							"key": "postal_code",
+							"value": "{{postal_code}}"
+						},
+						{
+							"key": "key",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
